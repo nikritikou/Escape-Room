@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Escape Room</title>
 
     <style>
@@ -16,27 +17,33 @@
             min-height: 100vh;
         }
 
-        #game {
+        /* Η εικόνα του κεριού */
+        #candle {
             position: relative;
             display: inline-block;
         }
 
-        #candle {
+        #candle img {
             display: block;
-            width: 300px;
+            max-width: 90vw;
+            max-height: 90vh;
         }
 
+        /* ΜΟΝΟ η φλόγα */
         #flame {
             position: absolute;
-            width: 80px;
-            cursor: pointer;
 
-            /* Αυτές οι τιμές θα χρειαστεί πιθανόν να αλλάξουν
-               ανάλογα με το πού βρίσκεται η φλόγα στην εικόνα. */
-            top: 20px;
-            left: 110px;
+            /* Ρυθμίζουμε αυτά ανάλογα με τη θέση της φλόγας */
+            top: 0;
+            left: 50%;
+
+            width: 80px;
+            transform: translateX(-50%);
+
+            cursor: pointer;
         }
 
+        /* Όταν πατηθεί η φλόγα */
         #flame.off {
             display: none;
         }
@@ -45,15 +52,19 @@
 
 <body>
 
-    <div id="game">
-        <img id="candle" src="images/keri.png" alt="Κερί">
+    <div id="candle">
 
+        <!-- Ολόκληρο το κερί -->
+        <img src="images/keri.png" alt="Κερί">
+
+        <!-- ΜΟΝΟ η φλόγα -->
         <img
             id="flame"
             src="images/floga.png"
             alt="Φλόγα"
             onclick="putOutFlame()"
         >
+
     </div>
 
     <script>
@@ -65,4 +76,3 @@
 </body>
 </html>
 ```
-
