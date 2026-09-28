@@ -1,1 +1,68 @@
+```html
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #game {
+            position: relative;
+            display: inline-block;
+        }
+
+        #candle {
+            display: block;
+            width: 300px;
+        }
+
+        #flame {
+            position: absolute;
+            width: 80px;
+            cursor: pointer;
+
+            /* Αυτές οι τιμές θα χρειαστεί πιθανόν να αλλάξουν
+               ανάλογα με το πού βρίσκεται η φλόγα στην εικόνα. */
+            top: 20px;
+            left: 110px;
+        }
+
+        #flame.off {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game">
+        <img id="candle" src="images/keri.png" alt="Κερί">
+
+        <img
+            id="flame"
+            src="images/floga.png"
+            alt="Φλόγα"
+            onclick="putOutFlame()"
+        >
+    </div>
+
+    <script>
+        function putOutFlame() {
+            document.getElementById("flame").classList.add("off");
+        }
+    </script>
+
+</body>
+</html>
+```
 
